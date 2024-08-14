@@ -46,6 +46,13 @@ class User extends Authenticatable
         ];
     }
 
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+
     protected static function boot()
     {
         parent::boot();

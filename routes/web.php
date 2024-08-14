@@ -8,7 +8,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
-
+use App\Http\Controllers\TaskController;
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
@@ -38,5 +38,16 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('tasks', [TaskController::class, 'index'])->name('tasks.index');
+    Route::post('tasks', [TaskController::class, 'store'])->name('tasks.store');
+    Route::get('tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+    Route::patch('tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
+    Route::delete('tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
