@@ -27,7 +27,19 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 
 You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
+<<<<<<< HEAD
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+=======
+5. Set up your database configuration in the `.env` file:
+    ```env
+   DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=login
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
+>>>>>>> 83007b9 (Update README file with new information)
 
 ## Laravel Sponsors
 
