@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-header text-center">{{ __('Dashboard') }}</div>
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,19 +14,21 @@
                         </div>
                     @endif
 
-                    <p>{{ __('Welcome,') }} {{ Auth::user()->name }}!</p>
-                    <p>{{ __('You are logged in.') }}</p>
-                    
-                    <div class="d-grid gap-2">
-                        <a href="{{ route('logout') }}" class="btn btn-primary btn-block"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                    </div>
+                    {{ __('You are logged in!') }}
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                    <div class="mt-4">
+                        <h5>Welcome, {{ $user->name }}!</h5>
+                        <p>Your email: {{ $user->email }}</p>
+                        <a href="{{ route('tasks.index') }}" class="btn btn-primary">Go to To-Do List</a>
+                        <a href="{{ route('logout') }}" class="btn btn-secondary"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
