@@ -19,7 +19,7 @@
                     <div class="mt-4">
                         <h5>Welcome, {{ $user->name }}!</h5>
                         <p>Your email: {{ $user->email }}</p>
-                        <a href="{{ route('tasks.index') }}" class="btn btn-primary">Go to To-Do List</a>
+                        <a href="{{ route('tasks.index') }}" class="btn btn-primary">Go to To-Do Lists</a>
                         <a href="{{ route('logout') }}" class="btn btn-secondary"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">
